@@ -1,0 +1,382 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="js/jquery-1.11.3.js"></script>
+    <link rel="stylesheet" href="css/bootstrap.css">
+    <link rel="stylesheet" href="css/animate.css"/>
+    <style>
+        .container{
+            /* margin:0 10%; */
+        }
+        body{
+            background:deepskyblue;
+            text-align: center;
+        }
+        .role_title{
+            text-align: center;
+            color:#fff;
+        }
+        h2{
+            font-size: 1.2rem;
+            color: rgba(255,255,255,0.5);
+            font-family: impact;
+            font-weight: 400;
+            transform: skew(-10deg);
+            margin-top:2px;
+            margin-left:13px;
+        }
+        h1{ 
+            font-family: Microsoft Yahei;
+            display: block;
+            font-size:3rem;
+            margin-block-start: 0.67em;
+            margin-block-end: 0.67em;
+            margin-inline-start: 0px;
+            margin-inline-end: 0px;
+            font-weight: bold;
+            margin-bottom:0;
+            text-shadow: 1px 1px 5px rgba(0,0,0,0.2);
+        }
+        .accordion{
+            margin-top:50px;
+            margin-bottom: 50px;
+        }
+        span{  color:#fff;
+            font-size: 1.3rem;
+            margin-top: 20px;
+            text-shadow: 1px 1px 5px rgba(0,0,0,0.3);
+            cursor: pointer;
+            margin-bottom:3px;
+        }
+       span:hover{
+           /* color:#f76701; */
+           font-weight:550;
+           text-shadow:none;
+       }
+        .title{
+            /* margin-left:200px; */
+           
+        }
+        .title img{
+            width:30px;
+            margin-bottom: 5px;
+            opacity:0;
+            /* display: none; */
+            transition: all .5s linear;
+            margin-left:-20px;
+            display: inline-block
+            
+        }
+        .fontover{
+            opacity:1!important;
+            /* display: block!important; */
+            margin-left:0!important
+        }
+      
+        .content{
+            display: flex;
+            flex-wrap:wrap;
+            justify-content:space-around;
+            /* margin-left:440px; */
+            text-align: center;
+            width:500px;
+            margin:0 auto;
+            margin-bottom:20px;
+        }
+        .con1{
+            width:300px;
+        }
+        .con2{
+            width:850px;
+        }
+        .con3{
+            width:700px;
+        }
+        .content_img{
+            margin-left:200px;
+            margin-top:20px;
+            border:2px solid #fff;
+            overflow: hidden;
+            width:100px;height:100px ; 
+            margin-left:10px;   
+            border-radius: 50%;
+            /* box-shadow: 1px 1px #ddd */
+            cursor: pointer;
+        }
+        .content_img:hover{
+            animation:bounce 2s;
+        }
+        .content_img img{
+            width:95px;
+            min-width:95px;
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+
+    
+    <div class="role_title">
+            <h1>角色介绍</h1>
+            <h2>Role Introduction</h2>
+            <p>您将指挥各具特色的少女们进行战斗
+                <br>
+                    她们有的是擅长远距离战斗的枪手
+                    <br>
+                    有的是身手敏捷的刺客
+                    <br>
+                    也有操纵重型机甲的少女</p>
+    </div>
+
+    <div class="accordion">
+            <div class="title">
+                
+                    <img src="images/opic/hand.png" alt="">   
+                    <span>主角</span>
+              
+                   
+                    <h2>Protagonist</h2>
+            </div>
+            <div class="content con1">
+                    <div class="content_img">
+                        <img src="images/head/player/Marco.png" alt="">
+                    </div>
+                    <div class="content_img">
+                        <img src="images/head/player/Linda.png" alt="">
+                    </div>
+            </div>
+            <div class="title">
+                    <img src="images/opic/hand.png" alt="">  
+                    <span>可结婚对象</span>
+                    <h2>Marriage Candidates</h2>
+            </div>
+            <div class="content con2">
+                <div class="content_img">
+                    <img src="images/head/lovers/Aadit.png" alt="">
+                </div>
+                <div class="content_img">
+                    <img src="images/head/lovers/Albert.png" alt="">
+                </div>
+                <div class="content_img">
+                        <img src="images/head/lovers/Alice.png" alt="">
+                </div>
+                <div class="content_img">
+                        <img src="images/head/lovers/Antoine.png" alt="">
+                </div>
+                <div class="content_img">
+                        <img src="images/head/lovers/Arlo.png" alt="">
+                </div>
+                <div class="content_img">
+                        <img src="images/head/lovers/Django.png" alt="">
+                </div>
+                <div class="content_img">
+                    <img src="images/head/lovers/Emily.png" alt="">
+                </div>
+                <div class="content_img">
+                    <img src="images/head/lovers/Erwa.png" alt="">
+                </div>
+                <div class="content_img">
+                    <img src="images/head/lovers/Ginger.png" alt="">
+                </div>
+                <div class="content_img">
+                    <img src="images/head/lovers/Gust.png" alt="">
+                </div>
+                <div class="content_img">
+                    <img src="images/head/lovers/Liuwa.png" alt="">
+                </div>
+                <div class="content_img">
+                    <img src="images/head/lovers/Lucy.png" alt="">
+                </div>
+                <div class="content_img">
+                    <img src="images/head/lovers/Mei.png" alt="">
+                </div>
+                <div class="content_img">
+                    <img src="images/head/lovers/Mint.png" alt="">
+                </div>
+                <div class="content_img">
+                    <img src="images/head/lovers/Nora.png" alt="">
+                </div>
+                <div class="content_img">
+                    <img src="images/head/lovers/Oaks.png" alt="">
+                </div>
+                <div class="content_img">
+                    <img src="images/head/lovers/Paulie.png" alt="">
+                </div>
+                <div class="content_img">
+                    <img src="images/head/lovers/Petra.png" alt="">
+                </div>
+                <div class="content_img">
+                    <img src="images/head/lovers/Phyllis.png" alt="">
+                </div>
+                <div class="content_img">
+                    <img src="images/head/lovers/Qiwa.png" alt="">
+                </div>
+                <div class="content_img">
+                    <img src="images/head/lovers/Remington.png" alt="">
+                </div>
+                <div class="content_img">
+                    <img src="images/head/lovers/Sam.png" alt="">
+                </div>
+                <div class="content_img">
+                    <img src="images/head/lovers/Sanwa.png" alt="">
+                </div>
+                <div class="content_img">
+                    <img src="images/head/lovers/Siwa.png" alt="">
+                </div>
+                <div class="content_img">
+                    <img src="images/head/lovers/Sonia.png" alt="">
+                </div>
+                <div class="content_img">
+                    <img src="images/head/lovers/Tody.png" alt="">
+                </div>
+                <div class="content_img">
+                    <img src="images/head/lovers/Wuwa.png" alt="">
+                </div>
+                <div class="content_img">
+                    <img src="images/head/lovers/Xu.png" alt="">
+                </div>
+            </div>
+            <div class="title">
+                    <img src="images/opic/hand.png" alt="">  
+                    <span>儿童</span>
+                    <h2>Lovely children</h2>
+            </div>
+            <div class="content con3">
+                <div class="content_img">
+                    <img src="images/head/children/Dolly.png" alt="">
+                </div>
+                <div class="content_img">
+                    <img src="images/head/children/Jack.png" alt="">
+                </div>
+                <div class="content_img">
+                    <img src="images/head/children/Molly.png" alt="">
+                </div>
+                <div class="content_img">
+                    <img src="images/head/children/Polly.png" alt="">
+                </div>
+                <div class="content_img">
+                    <img src="images/head/children/Toby.png" alt="">
+                </div>
+            </div>
+            <div class="title">
+                    <img src="images/opic/hand.png" alt="">  
+                    <span>宠物</span>
+                    <h2>Animal And Pet </h2>
+            </div>
+            <div class="content con3">
+                <div class="content_img">
+                    <img src="images/head/animals/Abu.png" alt="">
+                </div>
+                <div class="content_img">
+                    <img src="images/head/animals/Pinky.png" alt="">
+                </div>
+                <div class="content_img">
+                    <img src="images/head/animals/QQ_1.png" alt="">
+                </div>
+                <div class="content_img">
+                    <img src="images/head/animals/Scraps.png" alt="">
+                </div>
+                <div class="content_img">
+                    <img src="images/head/animals/Yoyo.png" alt="">
+                </div>
+            </div>
+            <div class="title">
+                    <img src="images/opic/hand.png" alt="">  
+                    <span>其他居民</span>
+                    <h2>Other People</h2>
+            </div>
+            <div class="content con3">
+                <div class="content_img">
+                    <img src="images/head/others/Ack.png" alt="">
+                </div>
+                <div class="content_img">
+                    <img src="images/head/others/Carol.png" alt="">
+                </div>
+                <div class="content_img">
+                    <img src="images/head/others/Dana.png" alt="">
+                </div>
+                <div class="content_img">
+                    <img src="images/head/others/Dawa.png" alt="">
+                </div>
+                <div class="content_img">
+                    <img src="images/head/others/Gale.png" alt="">
+                </div>
+                <div class="content_img">
+                    <img src="images/head/others/Higgins.png" alt="">
+                </div>
+                <div class="content_img">
+                    <img src="images/head/others/Isaac.png" alt="">
+                </div>
+                <div class="content_img">
+                    <img src="images/head/others/Lee.png" alt="">
+                </div>
+                <div class="content_img">
+                    <img src="images/head/others/Mars.png" alt="">
+                </div>
+                <div class="content_img">
+                    <img src="images/head/others/Martha.png" alt="">
+                </div>
+                <div class="content_img">
+                    <img src="images/head/others/McDonald.png" alt="">
+                </div>
+                <div class="content_img">
+                    <img src="images/head/others/Merlin.png" alt="">
+                </div>
+                <div class="content_img">
+                    <img src="images/head/others/Presley.png" alt="">
+                </div>
+                <div class="content_img">
+                    <img src="images/head/others/Russo.png" alt="">
+                </div>
+                <div class="content_img">
+                    <img src="images/head/others/Sophie.png" alt="">
+                </div>
+                <div class="content_img">
+                    <img src="images/head/others/Tuss.png" alt="">
+                </div>
+                <div class="content_img">
+                    <img src="images/head/others/Yeye.png" alt="">
+                </div>
+                <div class="content_img">
+                    <img src="images/head/others/huss.png" alt="">
+                </div>
+            </div>
+    </div>
+
+</div>
+    
+    <script>
+        $(function(){
+            $("div.content:gt(0)").hide();
+             $("div.accordion").on("click","div.title",function(){
+            $(this).next().slideToggle().siblings(".content").slideUp();
+             })
+        })
+        
+        $(function(){
+            $(".title span").mouseover(function(e){
+                e.stopPropagation;
+                e.preventDefault;
+                console.log(111);
+                var $tar=$(e.target)
+                $tar.prev().addClass("fontover")
+                console.log(121)
+            })
+            $(".title span").mouseout(function(e){
+                e.stopPropagation;
+                e.preventDefault;
+                console.log(111);
+                var $tar=$(e.target)
+                $tar.prev().removeClass("fontover")
+                console.log(121)
+             })
+        })
+
+       
+    </script>
+</body>
+</html>

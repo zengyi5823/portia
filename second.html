@@ -1,0 +1,355 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>新闻</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <link rel="stylesheet" href="css/bootstrap.css">
+    <link rel="stylesheet" href="css/animate.css"/>
+    <script src='js/jquery.min.js'></script>
+    <script src='js/popper.min.js'></script>
+    <script src='js/bootstrap.min.js'></script>
+
+    <style>
+        body{
+            margin: 0;padding: 0;
+            background-color:#eff3f5;
+            position: relative;
+        }
+        #header{
+            width:100%;height:60px;
+            margin:0;
+            padding:0;
+        }
+
+        #sider{
+            width:130px;height:360px ;
+            position:fixed;
+            top:35%;right:0;
+        }
+        #footer{
+            width:100%;height:200px;
+            margin: 0;
+            padding: 0;
+        }
+
+        /*主体内容*/
+        .people_pic{
+            width:100%;
+        }
+        .people{
+            position:absolute;
+            top:10%;left:35%;
+            min-width:500px;
+
+        }
+        /*面包导航*/
+        ul.bread{
+            list-style: none;
+            display:flex;
+            margin-bottom:15px;
+        }
+        ul.bread li{
+            margin:0 5px 0 5px;
+        }
+        ul.bread li img{
+            width:32px;
+            margin-top:-10px
+        }
+        ul.bread li a,ul.bread li span{
+            text-decoration: none;
+            color:#7d7d7d;
+        }
+        ul.bread li a:hover{
+            color:#000;
+        }
+        .game_info{
+            width:100%;
+            margin: 0 auto;
+            margin-top:-6px;
+            margin-bottom: 30px;
+            background-color: #e9ecef;
+            position:relative;
+            min-width:1110px;
+            
+        }
+        .game_info_header{
+            width:100%;height:50px;
+            background-color:#f1c056;
+            font-weight:bold;
+            color: #ffffff;
+            text-align: center;
+            line-height: 50px;
+            border-bottom: 1px solid #c37b51;
+            box-shadow: 0 2px 2px 0 rgba(195,195,195,0.50);
+        }
+        .game_info_box{
+            float: left;
+        }
+        .game_info img.pic{
+            width:100%;
+            height:520px;
+            min-width:1920px;
+
+        }
+        .game_info_title{
+            width: 740px;
+            padding:5px 18px 5px 18px;
+            overflow: hidden;
+        }
+        .game_info_title img{
+            width:150px ;
+            margin-top: -8px;
+        }
+        .game_info_title h5{
+            display: inline-block;
+            color:#f76701;
+            font-weight: bold;
+            margin-left: 20px;
+            margin-top: 30px;
+
+        }
+        .game_info_title span{
+            float:right;
+            margin-top:30px;
+            color:#6c757d;
+            margin-right:0px;
+        }
+        .game_info_con{
+            width: 740px;
+            padding:5px 20px 5px 20px;
+            border-bottom:1px solid #fff;
+            box-shadow: 2px 2px 2px 2px rgba(195,195,195,0.50);
+            margin-bottom:50px
+        }
+        .game_info_con p{
+            width: 700px;
+            margin-bottom: 10px;
+
+        }
+        .game_info_con img{
+            width: 700px;
+        }
+        .game_info_con p{
+            width: 700px;
+            margin-top:15px
+        }
+        .game_info_con h5{
+            text-align: center;
+            font-weight: normal;
+            margin-top:50px;
+            margin-bottom:20px;
+        }
+        /*右边*/
+       .info_right{
+            width:250px;
+            margin-left:840px;
+           min-width:250px;
+           
+        }
+         /*购买游戏*/
+        .buygame_header{
+            text-align:center;
+            width:245px;
+            height:30px;
+            margin:0 auto;
+            line-height:30px;
+            background:#f1c056;;
+            color:#fff;
+            font-weight: bolder;
+            margin-top:50px
+        }
+        .buygame_con{
+            width: 245px;
+            height: 150px;
+            margin: 0 auto;
+
+        }
+        .buygame_con a img{
+            width:120px;
+        }
+        /*微信小程序*/
+        .weixin_header{
+            text-align:center;
+            width:245px;
+            height:30px;
+            margin:0 auto;
+            line-height:30px;
+            background:#f1c056;
+            color:#fff;
+            font-weight: bolder;
+
+        }
+
+        .weixin_box{
+            width: 245px;
+            margin:0 auto;
+            position: relative;
+            margin-bottom:30px;
+        }
+
+        .weixin_pic{
+            width: 245px;
+
+        }
+        .erweima_pic{
+            width:245px;
+        }
+        .erweima_pic_box{
+            position: absolute;
+            top:0px;left:0px;
+            display:none;
+        }
+
+        .weixin_box:hover .erweima_pic_box{
+            display: block;
+        }
+
+
+        /*同人轮播图*/
+        .carousel_header{
+            text-align:center;
+            width:245px;
+            height:30px;
+            margin:0 auto;
+            line-height:30px;
+            background:#f1c056;;
+            color:#fff;
+            font-weight: bolder;
+            margin-top:48px;
+
+        }
+        #tongren{
+            width:245px;
+            margin:0 auto;
+        }
+        #tongren .carousel-inner .carousel-item img{
+            width: 250px;
+        }
+        .carousel-control-next,.carousel-control-prev{
+            width:30px;
+            height:30px;
+            border-radius: 50%;
+            margin-top:45%;
+            background-color:rgba(0,0,0,0.2);
+        }
+
+    </style>
+</head>
+
+<body>
+<header>
+    <iframe id="header" src="header.html" frameborder="0" scrolling="no" class="header-first"></iframe>
+</header>
+    <iframe id="sider" src="sider.html" frameborder="0" scrolling="no"></iframe>
+
+<div class="game_info">
+    <img class="pic" src="images/opic/bg/bj1.png" alt="" class="w-100"/>
+
+    <div class="people">
+        <img class="people_pic" src="images/opic/111.png" alt=""/>
+    </div>
+</div>
+
+    <div class="container">
+            <ul class="bread">
+                    <li>
+                        <img src="images/opic/Social_baby.png" alt="">
+                        <a href="">我的位置：</a>
+                    </li>
+                    <li><a href="">首页</a></li>
+                    <li> >> </li>
+                    <li><a href="">新闻中心</a></li>
+                </ul>
+        <div class="game_info">
+            <div class="game_info_header">
+                <p>新闻中心</p>
+            </div>
+            <div class="game_info_box">
+                <div class="game_info_title">
+                    <img src="images/opic/logo.png" alt=""/>
+                    <h5>波西亚时光：新内容即将推出！</h5>
+                    <span>4月26日</span>
+                    <table></table>
+                </div>
+                <div class="game_info_con">
+                    <p class="mt-0">我们很高兴地宣布，我们将在未来几个月内发布我在Portia的时间更新！</p>
+                    <p> 此更新将包含全新内容，包括对Petra的新方面追求！在这个新的任务中，你需要帮助佩特拉寻找她一直梦寐以求的知识，这样你才能赢得她的心！</p>
+                    <img src="images/opic/news/e983b62a176a41f560aed523eb488b6f8cfbf967.jpg" alt=""/>
+                    <p>我们还将为您的角色添加一套全新的服装套装！</p>
+                    <img src="images/opic/news/0d705ade1908a7dc52c35cafbe5f6668658a98a4.jpg" alt=""/>
+                    <p>Monkey King服装套装包括顶部和底部以及头饰。你还会收到金谷棒 - 一种神奇的武器！为了完成这个外观，你将能够在理发店改变你的发型以配合服装。</p>
+                    <p>我们的团队目前正在进行更多本地化工作，以便我们可以在下次更新My Port At Portia时添加韩语和土耳其语语言支持。我们很快就会有更多新闻！</p>
+                    <h5>—— END ——</h5>
+                </div>
+                
+            </div>
+        
+        <!-- 右边-->
+        <div class="info_right">
+            <!-- 购买游戏-->
+            <div class="buygame">
+                <div class="buygame_header">购买游戏</div>
+                <div class="buygame_con">
+                    <a href=""><img src="images/opic/steam1.jpg" alt=""/></a>
+                    <a href=""><img src="images/opic/wegame0.jpg" alt=""/></a>
+                </div>
+
+            </div>
+            <!-- 微信-->
+            <div class="weixin_header">微信小程序</div>
+            <div class="weixin_box">
+                <div class="weixin_pic_box">
+                    <img class="weixin_pic" src="images/opic/zeng_1.png" alt=""/>
+                </div>
+                <div class="erweima_pic_box" >
+                    <img class="erweima_pic" src="images/opic/zeng.png" alt=""/>
+                </div>
+            </div>
+            <!-- 同人轮播-->
+            <div class="carousel_header">优秀同人图</div>
+            <div id="tongren" class="carousel" data-ride="carousel">
+                <div class="carousel-inner">
+                    <div class="carousel-item ">
+                        <img src="images/opic/tongren/1.png" alt=""/>
+                    </div>
+                    <div class="carousel-item active">
+                        <img src="images/opic/tongren/2.png" alt=""/>
+                    </div>
+                    <div class="carousel-item">
+                        <img src="images/opic/tongren/3.png" alt=""/>
+                    </div>
+                    <div class="carousel-item">
+                        <img src="images/opic/tongren/4.png" alt=""/>
+                    </div>
+
+                </div>
+                <a data-slide="next" href="#tongren" class="carousel-control-next">
+                    <span class="carousel-control-next-icon"></span>
+                </a>
+                <a data-slide="prev" href="#tongren" class="carousel-control-prev">
+                    <span class="carousel-control-prev-icon"></span>
+                </a>
+            </div>
+
+        </div>
+        
+    </div>
+
+    </div>
+
+
+
+
+
+
+
+
+
+
+
+<footer>
+    <iframe id="footer" src="footer.html" frameborder="0" scrolling="no" class="w-100"></iframe>
+</footer>
+</body>
+</html>

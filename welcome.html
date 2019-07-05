@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <link rel="stylesheet" href="css/bootstrap.css">
+    <script src='js/jquery.min.js'></script>
+    <script src='js/popper.min.js'></script>
+    <script src='js/bootstrap.min.js'></script>
+    <link rel="stylesheet" href="css/animate.css"/>
+    <style>
+        body{margin:0;padding:0}
+        .container-fluid{
+            padding:0;
+        }
+        #bg{
+            position: relative;
+            width:100%;height: 1080px;
+            background-image:url("images/opic/bj3.jpg");
+            display: flex;
+            justify-content: space-around;
+        }
+        div.banner{
+            position: absolute;
+            top:0;
+            width:100%;height:60px;
+            background-color:rgba(0,0,0,0.7);
+            padding-top:0.3%;
+            display: flex
+            
+        }
+
+          
+
+        /*左边*/
+        .banner .banner_logo{
+            height: 60px;
+            line-height:50px;
+        }
+        .banner .banner_logo img{
+            width:170px;
+
+        }
+        /*banner中间的结婚图*/
+        .banner_center{
+            margin-left:30px;
+        }
+        .banner_center img{
+            width:400px
+        }
+        .banner_center:hover{
+            animation: shake 3s;
+        }
+        /*右边*/
+        ul{
+            list-style:none;
+            display: flex;
+            margin-top:7px;
+            padding:0;
+            margin-right: 10px;
+        }
+        ul>li{
+
+           margin-right:10px;
+           
+           
+        }
+        div.banner_right>ul>li>a{
+            display: block;
+            width:100%;
+            padding:5px;
+            color:#f76701;   
+            border:2px solid #f76701;
+            border-radius: 5px;
+            text-align: center;
+            font-weight: bold; 
+            text-decoration: none;  
+            min-width: 78px;
+            
+        }
+        div.banner_right>ul>li>a:hover{
+            background-color:#f76701;
+            color:#fff;
+        }
+
+        /*进入盒子*/
+        #logo{
+            margin-bottom:50px;
+            animation:pulse 3s ease-out infinite 2s;
+        }
+       
+        
+        .enter_all{
+            position: absolute;
+            top:30%;right:10%;
+        }
+
+       .enter{
+           position:absolute;
+           right:40%;
+           width:25%;
+           background-image:linear-gradient(to bottom,#f2873b,#f76701);
+           border-radius:5px;
+            font-weight: bold;
+            color:#fff;
+            opacity:0.9;
+       }
+       .enter:hover{
+           outline:0;
+           background:#fff;
+        text-decoration: none;
+         color:#f76701
+
+       }
+
+    </style>
+
+</head>
+<body>
+<!--背景-->
+<div class="container-fluid">
+    <div id='bg'>
+        <div class="banner d-flex justify-content-between">
+            <div class="banner_logo"><a href="#"><img src="images/opic/left-logo.png" alt=""/></a></div>
+            <div class="banner_center "><img src="images/opic/jiehun1.png" alt=""/></div>
+            <div class="banner_right">
+                <ul>
+                    <li >
+                        <a href="#">购买游戏</a>
+                    </li>
+                    <li>
+                        <a  href="#">联系我们</a>
+                    </li>
+                    <li>
+                        <a href="#">其他产品</a>
+                    </li>
+                </ul>
+            </div>
+            
+          
+        </div>
+        <div class="enter_all">
+            <img id="logo" src="images/opic/logo.png"/>
+            <a class="enter d-block btn-lg" href="#">ENTER</a>
+        </div>
+    </div>
+    
+    
+</div>
+        
+</body>
+</html>

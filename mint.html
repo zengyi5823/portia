@@ -1,0 +1,523 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>单人介绍</title>
+    <link rel="stylesheet" href="css/bootstrap.css">
+    <link rel="stylesheet" href="css/animate.css"/>
+    <script src="js/jquery-1.11.3.js"></script>
+    <script src='js/jquery.min.js'></script>
+    <script src='js/popper.min.js'></script>
+    <script src='js/bootstrap.min.js'></script>
+    <style>
+        /* *{
+            margin:0;padding:0
+        } */
+        body{
+            background: #eff3f5
+        }
+         /*面包导航*/
+         ul.bread{
+            list-style: none;
+            display:flex;
+            margin-bottom:15px;
+            margin-top:15px;
+            
+        }
+        ul.bread li{
+            margin:0 5px 0 5px;
+        }
+        ul.bread li:first-child a{
+           margin-bottom:20px!important;
+        }
+        ul.bread li img{
+            width:32px;
+            margin-top:-10px
+        }
+        ul.bread li a,ul.bread li span{
+            text-decoration: none;
+            color:#7d7d7d;
+        }
+        ul.bread li a:hover{
+            color:#000;
+        }
+        /* 个人轮播图 */
+        .my_big_box img{
+            width: 1110px;
+        }
+       .my_small_box img{
+           width:60px;
+       }
+       /* 背景故事 */
+       .story{
+           width:1110px;height:500px;
+           border: 1px solid #7d7d7d;
+           position: relative;
+           background: #fff;
+           display: flex;
+           box-shadow: 0 2px 2px 0 rgba(195,195,195,0.80);
+       }
+       .story .img_head{
+           position: absolute;
+           top:-50px;left:200px;
+           width:107px;height: 112px;
+           padding:5px;
+           border: 1px solid #7d7d7d;
+           background: #fff
+         
+       }
+       .story .img_head img{
+           width:95px;height: 100px;
+           background: lightpink;
+          
+       }
+       
+       .story .img_body{
+            height: 400px;
+            position: absolute;
+            top: 50px;right:10px;
+           
+       }
+       .jieshao{
+           width:400px;height:200px;
+           border: 1px solid #7d7d7d;
+           padding:20px;
+
+       }
+       .story h5{
+           color:#f76701;
+           font-size: 18px;
+           font-weight: bold
+       }
+       .story h5:nth-child(2){
+           margin-top:150px;
+           margin-left:50px;
+           width:10px;
+       }
+       .story>div:first-child{
+           margin:80px 0 20px 40px;
+       }
+       .story .waiguan{
+           margin:80px 0 20px 20px;
+           width:350px;height:365px;
+           border: 1px solid #7d7d7d;
+           padding:20px;
+           padding-left:0px
+       }
+       .story .waiguan ul{
+           list-style: none
+       }
+       .story .waiguan ul li{
+           margin-top:10px;
+       }
+       .story .waiguan ul li>img{
+           width:20px;
+       }
+       .ziliao_title{
+           margin-top:10px;
+       }
+       .ziliao{
+           width:400px;height:100px;
+           border: 1px solid #7d7d7d;
+           display: flex;
+       }
+       .ziliao ul{
+           list-style: none;
+           padding:0;
+           margin-top:10px;
+           margin-bottom:10px;
+          
+       }
+       .ziliao ul li{
+           width:80px;
+           text-align: center;
+           margin-top:10px;
+           /* border-top:1px solid #7d7d7d; */
+          
+       }
+       .hudong{
+           width:1110px;height:170px;
+           border:1px solid #ddd;
+           margin-top:50px;
+           padding:20px 20px 10px 40px;
+           text-align:right;
+           box-shadow: 0 2px 2px 0 rgba(195,195,195,0.80);
+           background: #fff;
+       }
+       .hudong div{
+           margin-top:10px;
+       }
+       .hudong div:last-child img{
+            width: 35px;
+       }
+       .foodandmission{
+           display: flex;
+           flex-direction: row;
+           margin-top:50px;
+           margin-bottom: 50px
+
+       }
+       /* 食物 */
+      
+       table{
+           width:580px;height: 510px;
+           min-width: 580px;min-height: 510px;
+           border: 1px solid #ccc;
+           text-align: center;
+           box-shadow: 0 2px 2px 0 rgba(195,195,195,0.80);
+           background: #fff;
+           margin-right:80px;
+          
+       }
+       
+       table img{
+           width: 40px;
+       }
+       .box{
+           position: relative;
+       }
+       .table_pre{
+         width:580px;height: 510px;
+         overflow: hidden;
+         background-image: url("images/opic/0.png");
+         background-size:auto 510px;
+         background-repeat: no-repeat;
+         background-position-x:-100px;
+         position: absolute;
+         top:0px;
+       }
+       /* 任务标签栏 */
+       .mission{
+           width: 450px;height: 507px;
+           border:1px solid #ccc;
+           box-shadow: 0 2px 2px 0 rgba(195,195,195,0.80);
+          
+       }
+       .mission .mission_head{
+           display: flex;
+           justify-content: space-between;
+       }
+       .mission .mission_head div{
+           width: 225px;height:50px;
+           line-height: 50px;
+           text-align: center;
+           cursor: pointer;
+       }
+       .mission .mission_head div:last-child{
+           background: lightpink
+       }
+       
+       .mission_content,.mission_content div{
+           width: 448px;height: 457px;
+           box-sizing: border-box
+       }
+       .mission_content{
+           position: relative;
+       }
+       .mission_content div{
+           position: absolute;
+           
+       }
+       .mission_content div:first-child{
+           background: #fff;
+           padding: 20px;
+       }
+       .mission_content div:last-child{
+           background: #fff;
+           padding: 20px;
+
+       }
+       .mission_content div:last-child p{
+           text-align: center;
+           color:#ff3800
+       }
+       .mission_content div dt{
+           color:#006cb0
+       }
+    </style>
+       
+</head>
+<body>
+<div id="header"></div>
+<div class="container">
+    <!-- 面包屑导航 -->
+    <ul class="bread">
+        <li>
+            <img src="images/opic/Social_baby.png" alt="">
+        </li>
+        <li>
+            <a href="">我的位置：</a>
+        </li>
+        <li><a href="">首页</a></li>
+        <li> >> </li>
+        <li><a href="">人物介绍</a></li>
+        <li> >> </li>
+        <li><a href="">明特</a></li>
+    </ul>
+    <!--角色假轮播图  -->     
+        <div class="my_big_box">
+            <img src="images/opic/carousel/carousel1.jpg"alt="" class="my_big">
+        </div>    
+        <div class="my_small_box">
+            <img src="images/head/lovers/Mint.png" alt="" class="my_small" data-target="../images/">
+            <img src="images/head/lovers/Mint.png" alt="" class="my_small">
+            <img src="images/head/lovers/Mint.png" alt="" class="my_small">
+            <img src="images/head/lovers/Mint.png" alt="" class="my_small">
+            <img src="images/head/lovers/Mint.png" alt="" class="my_small">
+            <img src="images/head/lovers/Mint.png" alt="" class="my_small">
+            <img src="images/head/lovers/Mint.png" alt="" class="my_small">
+        </div>     
+    <!-- 背景故事 -->
+        <div class="story">
+            <div>
+               <h5>个人介绍</h5>
+               <div class="jieshao">&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp明特在孤儿院长大，喜欢打篮球。他从小就开始做工程师。
+                明特经常小睡，有时可以在白天在中环广场外的苹果树下或在Pinky睡觉的同一个咖啡厅阳台的椅子上打盹。如果玩家在打盹时尝试与他互动，他会像平常一样回应，尽管他可能会像坐着睡觉一样坐着。</div>
+                <h5 class="ziliao_title">基本资料</h5>
+                <div class="ziliao">
+                    <ul>
+                        <li>出生季节</li>
+                        <li><img src="images/opic/littleimg/Season_spring.png" alt=""></li>
+                    </ul>
+                    <ul>
+                        <li>生日</li>
+                        <li>1.1</li>
+                    </ul>
+                    <ul>
+                        <li>性别</li>
+                        <li>男</li>
+                    </ul>
+                    <ul>
+                        <li>身高</li>
+                        <li>188厘米</li>
+                    </ul>
+                    <ul>
+                        <li>体重</li>
+                        <li>70公斤</li>
+                    </ul>
+                </div>
+            </div>
+            <h5>外观表现</h5>
+            <div class="waiguan">
+                <ul>
+                    <li><img src="images/opic/laugh.png"> 明特有深黑色的蓝绿色头发</li>
+                    <li><img src="images/opic/laugh.png"> 白皙的皮肤和杏仁色的眼睛</li>
+                    <li><img src="images/opic/laugh.png"> 他穿着一件黄色和蓝色背心搭配半藏白色polo衫</li>
+                    <li><img src="images/opic/laugh.png"> 中蓝色牛仔裤搭配棕色腰带，棕色系带鞋</li>
+                    <li><img src="images/opic/laugh.png"> 左手腕上戴着一块手表，还有一个圆柱形的蓝色小包</li>
+                    <li><img src="images/opic/laugh.png"> 上面印有金色星星</li>
+                </ul>
+             
+            </div>
+            
+            <div class="img_head"><img src="images/head/lovers/Mint.png" alt=""></div>
+            <img src="images/body/lovers/Mint-concept.png" alt="" class="img_body">
+        </div>
+    <!-- 互动关系 -->
+    <div class="hudong">
+        <div>
+            <span>伙伴好感度：</span>
+            <img src="images/opic/littleimg/Starcolor.png" alt="">
+            <img src="images/opic/littleimg/Starcolor.png" alt="">
+            <img src="images/opic/littleimg/Starcolor.png" alt="">
+            <img src="images/opic/littleimg/Starwhilte.png" alt="">
+            <img src="images/opic/littleimg/Starwhilte.png" alt="">
+            <img src="images/opic/littleimg/Starwhilte.png" alt="">
+            <img src="images/opic/littleimg/Starwhilte.png" alt="">
+            <img src="images/opic/littleimg/Starwhilte.png" alt="">
+            <img src="images/opic/littleimg/Starwhilte.png" alt="">
+            <img src="images/opic/littleimg/Starwhilte.png" alt="">
+            
+        </div>
+        <div>
+            <span>伴侣好感度：</span>
+            <img src="images/opic/littleimg/Heartcolor.png" alt="">
+            <img src="images/opic/littleimg/Heartcolor.png" alt="">
+            <img src="images/opic/littleimg/Heartcolor.png" alt="">
+            <img src="images/opic/littleimg/Heartcolor.png" alt="">
+            <img src="images/opic/littleimg/Heartcolor.png" alt="">
+            <img src="images/opic/littleimg/Heartcolor.png" alt="">
+            <img src="images/opic/littleimg/Heartcolor.png" alt="">
+            <img src="images/opic/littleimg/Heartcolor.png" alt="">
+            <img src="images/opic/littleimg/Heartwhite.png" alt="">
+            <img src="images/opic/littleimg/Heartwhite.png" alt="">
+            <strong>+</strong>
+            <img src="images/opic/littleimg/Wedding_Ring.png" alt="">
+        </div>
+        <div>
+            <span>社交：</span>
+            <img src="images/opic/littleimg/Social_talk.png" alt="">
+            <img src="images/opic/littleimg/Social_gift.png" alt="">
+            <img src="images/opic/littleimg/Desire_head_icon.png" alt="">
+            <img src="images/opic/littleimg/Social_spar.png" alt="">
+            <img src="images/opic/littleimg/Social_RPS.png" alt="">
+            <img src="images/opic/littleimg/Social_Invitation.png" alt="">
+            <img src="images/opic/littleimg/Social_play.png" alt="">
+            <img src="images/opic/littleimg/Social_date.png" alt="">
+            <img src="images/opic/littleimg/Social_Dine.png" alt="">
+            <img src="images/opic/littleimg/Social_interact.png" alt="">
+            <img src="images/opic/littleimg/Social_photo.png" alt="">
+            <img src="images/opic/littleimg/Social_Ride.png" alt="">
+            <img src="images/opic/littleimg/Social_Relic_Trade.png" alt="">
+            <img src="images/opic/littleimg/Social_confession.png" alt="">
+            <img src="images/opic/littleimg/Wedding_Ring.png" alt="">
+            <img src="images/opic/littleimg/Social_mission.png" alt="">
+        </div>
+    </div>
+    <!-- 食物 -->
+    <div class="box">
+        <div class="foodandmission">
+            <table>
+                            <tr>
+                            <th><img src="images/opic/littleimg/Social_Dine.png" alt="">&nbsp;&nbsp;餐饮</th>
+                            <th><img src="images/opic/littleimg/Prompt_happy.png" alt="">
+                                喜欢</th>
+                            <th><img src="images/opic/littleimg/Prompt_sad.png" alt="">
+                                不喜欢</th>   
+                            </tr> 
+                            <tr>
+                                <th><img src="images/opic/littleimg/Menu_icon_appetizer.png" alt="">
+                                &nbsp;开胃菜</th>
+                                <td>
+                                    <img src="images/opic/littleimg/Smoked_Fish_Roll.png" >
+                                    <img src="images/opic/littleimg/Banner_Fish_Salad.png" >
+                                    <img src="images/opic/littleimg/Caviar.png" >
+                                    <img src="images/opic/littleimg/Creamy_Salmon_Stew.png" >
+                                    <img src="images/opic/littleimg/Creamy_Shrimp_Stew.png" >
+                                    <img src="images/opic/littleimg/Green_Beans_in_Sauce.png" >
+                                </td> 
+                                <td>44</td>       
+                            </tr>
+                            <tr>
+                                <th><img src="images/opic/littleimg/Menu_icon_appetizer.png" alt="">&nbsp;主菜</th>
+                                <td>
+                                    <img src="images/opic/littleimg/Bamboo_Papaya_and_Seafood_with_Rice.png" alt="">
+                                </td> 
+                                <td>
+                                    <img src="images/opic/littleimg/Classic_Spaghetti_with_Meat_Sauce.png" alt="">
+                                    <img src="images/opic/littleimg/Stewed_Rice_Meat_Supreme.png" alt="">
+                                </td>       
+                            </tr>
+                            <tr>
+                                <th><img src="images/opic/littleimg/Menu_icon_appetizer.png" alt="">&nbsp;肉</th>
+                                <td>
+                                    <img src="images/opic/littleimg/Spicy_Fish_Soup.png" alt="">
+                                    <img src="images/opic/littleimg/Fish_Porridge.png" alt="">
+                                </td> 
+                                <td>44</td>       
+                            </tr>
+                            <tr>
+                                <th><img src="images/opic/littleimg/Menu_icon_appetizer.png" alt="">&nbsp;蔬菜</th>
+                                <td>
+                                    <img src="images/opic/littleimg/Golden_Radish_Soup.png" alt="">
+                                    <img src="images/opic/littleimg/Mapo_Tofu.png" alt="">
+                                    <img src="images/opic/littleimg/Spicy_and_Sour_Potato.png" alt="">
+                                </td> 
+                                <td>
+                                    <img src="images/opic/littleimg/Mushrooms_in_Oyster_Sauce.png" alt="">
+                                    <img src="images/opic/littleimg/Vegetable_with_Minced_Garlic.png" alt="">
+                                </td>       
+                            </tr>
+                            <tr>
+                                <th><img src="images/opic/littleimg/Menu_icon_appetizer.png" alt="">&nbsp;甜点</th>
+                                <td>33</td> 
+                                <td>44</td>       
+                            </tr>
+                            <tr>
+                                <th><img src="images/opic/littleimg/Menu_icon_appetizer.png" alt="">&nbsp;饮料</th>
+                                <td>
+                                    <img src="images/opic/littleimg/Tallsky_Goat_Milk.png" alt="">
+                                </td> 
+                                <td>44</td>       
+                            </tr>
+            </table>
+            <!-- 任务 -->
+            <div class="mission">
+                <div class="mission_head">
+                    <div data-click="tabs" data-target="content1">普通任务</div>
+                    <div data-click="tabs" data-target="content2">恋爱任务</div>
+                </div>
+                <div class="mission_content">
+                    <div id="content1">
+                    <dl>
+                        <dt>粗暴的睡眠</dt>
+                        <dd>明特正在打盹，但是Pinky不会让他独自一人。留下一些鲶鱼来分散她的注意力。</dd>
+                        <dt>和朋友共进晚餐</dt>
+                        <dd>Gale希望你能和明特成为朋友，先找明特然后一起去圆桌会议。
+                        当玩家是与薄荷的好友时，此任务触发。</dd>
+                        <dt>机会会议</dt>
+                        <dd>明特因无法小睡而感到困扰。他需要一个眼罩和一个枕头。</dd>
+                        <dt>政治和平</dt>
+                        <dd>明特想与Gust和平相处。他请你找出Gust喜欢的东西。问最接近Gust的人：Ginger，Russo和Albert。</dd>
+                        <dt>政治和平2</dt>
+                        <dd>Gust发现Mint在他的背景上挖掘，他似乎很生气。帮助Mint为Gust准备一些产品。</dd>
+                    </dl>
+                    </div>
+                    <div id="content2">
+                        <p>这些任务仅在玩家与明特恋情时才可用。</p>
+                        <dl>
+                            <dt>恋情开始</dt>
+                            <dd>盖尔希望你把这封信交给许博士。
+                                在玩家成功向明特供认后，此任务将触发。</dd>
+                            <dt>近距离出发</dt>
+                            <dd>明特别无选择，只能离开Portia？你需要和市长讨论这件事。
+                            如果玩家是带有造币的情人，则此任务会触发。</dd>
+                            <dt>明特的心</dt>
+                            <dd>明特的问题解决了。除了你和明特的关系，一切都有一个完美的结局。给薄荷一些时间。
+                            该任务在玩家完成近距离离境后触发。</dd>
+                            <dt>在太阳下</dt>
+                            <dd>在指定地点与明特一起沐浴阳光。
+                                如果玩家与明特结婚，则此任务会触发。</dd>
+                        </dl>
+                    </div>
+                </div>
+            </div>
+        </div>
+     <!-- table的上面一层 -->
+        <div class="table_pre"></div>
+    </div>
+</div>
+<script>
+     $(function(){
+        var tabs=document.querySelectorAll("[data-click=tabs]")
+        var zIndex=20;
+        for(var tab of tabs){
+            tab.onmouseover=function(){
+                var tab=this;
+                var id=tab.getAttribute("data-target");
+                var div=document.getElementById(id);
+                div.style.zIndex=zIndex;
+                zIndex++;
+            }
+        }
+    });
+    $(function(){
+        $(".story .waiguan li").mouseover(function(e){
+            var $tar=$(e.target);
+            $tar.children("img").attr({src:"images/opic/laugh_hover.png"})
+        })
+        $(".story .waiguan li").mouseout(function(e){
+            var $tar=$(e.target);
+            $tar.children("img").attr({src:"images/opic/laugh.png"})
+        })
+    })
+
+    
+
+    $(function(){
+        $(".table_pre").mousemove(function(e){
+            var $tar=$(e.target);
+            $tar.slideUp();
+        })
+         $(".foodandmission").mouseout(function(e){
+            var $tar=$(e.target);
+            $tar.siblings().slideDown();
+         })
+    })
+   
+</script>
+<script src="js/header.js"></script>
+</body>
+</html>

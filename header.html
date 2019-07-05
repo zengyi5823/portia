@@ -1,0 +1,448 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <link rel="stylesheet" href="css/bootstrap.css">
+    <script src='js/jquery.min.js'></script>
+    <script src='js/popper.min.js'></script>
+    <script src='js/bootstrap.min.js'></script>
+    <link rel="stylesheet" href="css/animate.css"/>
+    <script src="js/jquery-1.11.3.js"></script>
+    <style>
+        body{
+            margin:0;padding:0;
+        }
+        .container-fluid{
+            padding:0px;
+        }
+        .header{
+            height: 60px;
+            width:100%;
+            /*background-image:linear-gradient(to bottom,#a0fff7,#03a9f4 );*/
+            background-color:#f1c056;
+            border-bottom: 1px solid #c37b51;
+            box-shadow: 0 2px 2px 0 rgba(195,195,195,0.50);
+        }
+        .header_left{
+            float: left;
+            line-height:50px;
+        }
+        .header_left img{
+            height:60px;
+        }
+        div.header_center{
+            float: left;
+            height:60px;
+        }
+        .header_center_word{
+            width:120px;height:40px;
+            margin-right:10px;
+            margin-left:10px;
+            text-align: center;
+            margin-top: 10px;
+        }
+        .header_center_word>p{
+            color:#f5f5f5;
+            margin-bottom: 0;
+            font-size: 10px;
+            font-weight: bold;
+
+
+        }
+        .header_center_word>a{
+            color:#fff;
+            font-size: 15px;
+            font-weight: bold;
+        }
+
+        .header_center_word>a:hover{
+            display: block;
+            text-decoration: none;
+            font-weight: bold;
+            animation:heartBeat 2s;
+        }
+        .header_right>.nav{
+            height: 38px;
+            min-height: 38px;
+            width:242px;
+        }
+        .header_right>.nav>.nav-item{
+            margin-right:10px;
+
+        }
+        .header_right>.nav>.nav-item>.nav-link{
+            width:78px;height:38px;
+            min-width:99px;
+            color:#fff;
+            background-color:#f76701;
+            border:2px solid #f76701;
+            border-radius: 5px;
+            text-align: center;
+            font-weight: bold;
+            line-height: 19px;
+            font-size: 15px;
+          
+        }
+        .nav .nav-item .nav-link:hover{
+            background-color:#fff;
+            color:#f76701;
+        }
+        .header_right{
+            padding-top:10px;
+        }
+
+        /*下拉框*/
+        .header_content{
+            width:100%;
+            background:rgba(247,103,1,0.6);
+            display: none;
+            /* opacity: 0;
+            height:0;
+            transition:all 0.2s linear; */
+           
+        }
+      .header_content_hover{
+            width:100%;
+            background:rgba(247,103,1,0.6);
+            /* opacity:1;
+            height:125px ; */
+            display: block;
+        } 
+        /* 游戏资料 */
+        .header_content_ul2{
+            list-style: none;
+            display: flex;
+            justify-content: space-around;
+            margin-left:15%;
+            margin-right:15%;
+            padding-top:20px;
+            padding-bottom:20px;
+            opacity:0;
+           
+        }
+        .header_content_ul2_hover{
+            list-style: none;
+            display: flex;
+            justify-content: space-around;
+            margin-left:15%;
+            margin-right:15%;
+            padding-top:20px;
+            padding-bottom:20px;
+            opacity:1;
+           
+        }
+        .header_content_ul2 li{
+            position: relative;
+        }
+        .header_content_ul2 li a img{
+            width:150px;
+
+        }
+        .header_content_ul2 li span{
+            display: inline-block;
+            width:60px;height:30px;
+            border:1px solid #fff;
+            border-top-left-radius:6px;
+            background-color:rgba(255,255,255,0.2);
+            text-align: center;
+            line-height:30px;
+            color:#fff;
+            font-weight: bold;
+            position: absolute;
+            bottom:0;right:0;
+        }
+        /* 新闻 */
+        .header_content_ul1{
+            list-style: none;
+            display: flex;
+            justify-content: space-around;
+            margin-left:28%;
+            margin-right:28%;
+            padding-top:20px;
+            padding-bottom:20px;
+            opacity:0;
+           
+        }
+        .header_content_ul1_hover{
+            list-style: none;
+            display: flex;
+            justify-content: space-around;
+            margin-left:28%;
+            margin-right:28%;
+            padding-top:20px;
+            padding-bottom:20px;
+            opacity:1;
+           
+        }
+        .header_content_ul1 li{
+            position: relative;
+        }
+        .header_content_ul1 li a img{
+            width:150px;
+
+        }
+        .header_content_ul1 li span{
+            display: inline-block;
+            width:60px;height:30px;
+            border:1px solid #fff;
+            border-top-left-radius:6px;
+            background-color:rgba(255,255,255,0.2);
+            text-align: center;
+            line-height:30px;
+            color:#fff;
+            font-weight: bold;
+            position: absolute;
+            bottom:0;right:0;
+        }
+        /* 客户服务 */
+        .header_content_ul3{
+            list-style: none;
+            display: flex;
+            justify-content: space-around;
+            margin-left:30%;
+            margin-right:30%;
+            padding-top:20px;
+            padding-bottom:20px;
+            opacity:0;
+           
+        }
+        .header_content_ul3_hover{
+            list-style: none;
+            display: flex;
+            justify-content: space-around;
+            margin-left:30%;
+            margin-right:30%;
+            padding-top:20px;
+            padding-bottom:20px;
+            opacity:1;
+           
+        }
+        .header_content_ul3 li{
+            position: relative;
+        }
+        .header_content_ul3 li a img{
+            width:150px;
+
+        }
+        .header_content_ul3 li span{
+            display: inline-block;
+            width:60px;height:30px;
+            border:1px solid #fff;
+            border-top-left-radius:6px;
+            background-color:rgba(255,255,255,0.2);
+            text-align: center;
+            line-height:30px;
+            color:#fff;
+            font-weight: bold;
+            position: absolute;
+            bottom:0;right:0;
+        }
+        /* 活动 */
+        .header_content_ul4{
+            list-style: none;
+            display: flex;
+            justify-content: space-around;
+            margin-left:28%;
+            margin-right:28%;
+            padding-top:20px;
+            padding-bottom:20px;
+            opacity:0;
+           
+        }
+        .header_content_ul4_hover{
+            list-style: none;
+            display: flex;
+            justify-content: space-around;
+            margin-left:28%;
+            margin-right:28%;
+            padding-top:20px;
+            padding-bottom:20px;
+            opacity:1;
+           
+        }
+        .header_content_ul4 li{
+            position: relative;
+        }
+        .header_content_ul4 li a img{
+            width:150px;
+
+        }
+        .header_content_ul4 li span{
+            display: inline-block;
+            width:60px;height:30px;
+            border:1px solid #fff;
+            border-top-left-radius:6px;
+            background-color:rgba(255,255,255,0.2);
+            text-align: center;
+            line-height:30px;
+            color:#fff;
+            font-weight: bold;
+            position: absolute;
+            bottom:0;right:0;
+        }
+    </style>
+</head>
+<body>
+<div class="container-fluid">
+
+    <div class="header d-flex  justify-content-between">
+
+        <div class="header_left">
+            <a href="#">
+                <img class="nav-link" src="images/opic/left-logo.png" alt=""/>
+            </a>
+        </div>
+
+        <div class="header_center">
+            <div class="d-flex">
+                <div class="header_center_word  ">
+                    <p>HOME</p>
+                    <a href="#">我的首页</a>
+                </div>
+                <div class="header_center_word">
+                    <p>NEWS</p>
+                    <a class="center_news" href="#">新闻中心</a>
+                </div>
+                <div class="header_center_word">
+                    <p>GAME<img class="heart" srimages/opic/star1.png" alt=""/>INFO</p>
+                    <a class="center_info" href="#">游戏资料</a>
+                </div>
+                <div class="header_center_word">
+                    <p>SERVICE</p>
+                    <a class="center_kehu" href="#">客户服务</a>
+                </div>
+                <div class="header_center_word">
+                    <p>SCHEDULE</p>
+                    <a class="center_game" href="#">活动中心</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="header_right">
+            <ul class="nav">
+                <li class="nav-item">
+                    <a class="nav-link" href="#">联系我们</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link mr-4" href="#">其他产品</a>
+                </li>
+
+
+            </ul>
+        </div>
+    </div>
+    <!-- 游戏资料下拉 -->
+  
+    <div class="header_content">
+        <ul class="header_content_ul1">
+                    <li><a href=""><img src="images/opic/head_content/AAA.jpg" alt=""></a><span>最 新</span></li>
+                    <li><a href=""><img src="images/opic/head_content/bbb.jpg" alt=""></a><span>新 闻</span></li>
+                    <li><a href=""><img src="images/opic/head_content/ccc.jpg" alt=""></a><span>攻 略</span></li>
+        </ul>
+        <ul class="header_content_ul2">
+            <li><a href=""><img src="images/opic/head_content/ad_1_1.jpg" alt=""></a><span>角 色</span></li>
+            <li><a href=""><img src="images/opic/head_content/ad_2_1.jpg" alt=""></a><span>物 品</span></li>
+            <li><a href=""><img src="images/opic/head_content/ad_3_1.jpg" alt=""></a><span>地 图</span></li>
+            <li><a href=""><img src="images/opic/head_content/ad_4_1.jpg" alt=""></a><span>任 务</span></li>
+            <li><a href=""><img src="images/opic/head_content/ad_5_1.jpg" alt=""></a><span>日 历</span></li>
+        </ul>
+        <ul class="header_content_ul3">
+                <li><a href=""><img src="images/opic/head_content/fff.jpg" alt=""></a><span>注 册</span></li>
+                <li><a href=""><img src="images/opic/head_content/eee.jpg" alt=""></a><span>登 录</span></li>
+       </ul>
+       <ul class="header_content_ul4">
+            <li><a href=""><img src="images/opic/head_content/ddd.jpg" alt=""></a><span>同 人</span></li>
+            <li><a href=""><img src="images/opic/head_content/ggg.jpg" alt=""></a><span>娱 乐</span></li>
+            <li><a href=""><img src="images/opic/head_content/hhh.jpg" alt=""></a><span>活 动</span></li>
+   </ul>
+        
+    </div>
+ 
+    <!-- 新闻中心 -->
+    <!-- 客户服务 -->
+    <!-- 活动中心 -->
+</div>
+    <script>
+        // $(function(){
+        //     $("div.header_center").on("click","a.center_info",function(e){
+        //         var $info=$(this);
+        //         // e.stopPropagation;
+        //         // e.preventDefault;
+        //         console.log("1111111111");
+        //         $("div.header_content").css({height:125,opacity:1,background:"rgba(247,103,1,0.6)"});
+        //     })
+        //     $(window).click(function(e){
+        //        console.log("22222");
+        //        e.stopPropagation;
+        //         e.preventDefault;
+        //         var $tar=$(e.target);
+        //         if(!$tar.is($("a.center_info"))){
+        //             $("div.header_content").css({height:0,opacity:0,background:"rgba(247,103,1,0)"});    
+        //         }
+               
+        //     })
+        // })
+        
+        $(function(){
+        //新闻中心
+                $("div.header_center .center_news").hover(function(){
+                        console.log(123);
+                        $(".header_content").addClass("header_content_hover");
+                        console.log(456);
+                         $(".header_content_ul1").addClass("header_content_ul1_hover").siblings().hide();
+                         $(".header_content_ul1").show();
+                    }
+                )
+               
+               
+          
+        // 游戏资料
+     
+                $("div.header_center .center_info").hover(function(){
+                        console.log(123);
+                        $(".header_content").addClass("header_content_hover");
+                        console.log(456);
+                         $(".header_content_ul2").addClass("header_content_ul2_hover").siblings().hide();
+                         $(".header_content_ul2").show();
+                    }
+                )
+
+        // 客户服务
+                $("div.header_center .center_kehu").hover(function(){
+                        console.log(123);
+                        $(".header_content").addClass("header_content_hover");
+                        console.log(456);
+                         $(".header_content_ul3").addClass("header_content_ul3_hover").siblings().hide();
+                         $(".header_content_ul3").show();
+                    }
+                )
+        // 活动中心
+              $("div.header_center .center_game").hover(function(){
+                        console.log(123);
+                        $(".header_content").addClass("header_content_hover");
+                        console.log(456);
+                         $(".header_content_ul4").addClass("header_content_ul4_hover").siblings().hide();
+                         $(".header_content_ul4").show();
+                    }
+                )
+                $(window).click(function(e){
+                    console.log("22222");
+                     e.stopPropagation;
+                     e.preventDefault;
+                     var $tar=$(e.target);
+                 if(!$tar.is($(".header_content a"))){
+                    $("div.header_content").removeClass("header_content_hover");  
+                    $(".header_content ul3").removeClass("header_content_ul3_hover").siblings().show();  
+                 }
+               
+                })
+            })
+
+    </script>
+
+
+
+</body>
+</html>
